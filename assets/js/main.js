@@ -182,6 +182,7 @@ function SignIn(){
 function showUserProfile(){
 	$('#codecatalyst').hide();
 	$('#welcome').show(3000);
+	$('#username').html("Welcome,<br><strong>"+user.displayName+"</strong>");
 	$('#welcomeNote').hide();
 	$('#stats').show(2500);
 	$('#two').show(2500);
@@ -202,3 +203,14 @@ function updateStatus(){
 	// $('#editStatus').modal('hide');
 	console.log(status);
 }
+
+
+//SIGNOUT FUNCTION
+function signOut() {
+	firebase.auth().signOut().then(function () {
+		console.log('Signed Out');
+		location.reload(true); //reload the page from  the server and not the cache
+	}, function (error) {
+		console.error('Sign Out Error', error);
+	});
+};
