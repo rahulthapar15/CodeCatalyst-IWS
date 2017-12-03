@@ -130,10 +130,16 @@
 
 // --------------------------------------------------
 
+//FIREBASE AUTHENTICATION
+var provider = new firebase.auth.GoogleAuthProvider();
+var user;
+
+
 // Creating FIREBASE Reference
 var firebase_reference = firebase.database().ref();
-firebase_reference.child("Rahul").set({
-	Status : "Defaut Status"
+firebase.database().ref('Users/' + user.uid).set({
+
+	Status : 'Default Status'
 });
 
 
@@ -147,11 +153,25 @@ var refer_user = firebase.database().child("Rahul");
 function SignIn(){
 	console.log("Sign in clicked");
 
-	$('#codecatalyst').hide();
-	$('#welcome').show(3000);
-	$('#welcomeNote').hide();
-	$('#stats').show(2500);
-	$('#two').show(2500);
+	firebase.auth().signInWithPopup(provider).then(function (result) {
+		// This gives you a Google Access Token. You can use it to access the Google API.
+		var token = result.credential.accessToken;
+		// The signed-in user info.
+		user = result.user;
+		showUserProfile();
+		console.log(user.displayName);
+		// ...
+	}).catch(function (error) {
+		// Handle Errors here.
+		var errorCode = error.code;
+		var errorMessage = error.message;
+		// The email of the user's account used.
+		var email = error.email;
+		// The firebase.auth.AuthCredential type that was used.
+		var credential = error.credential;
+		// ...
+	});
+
 
 	// //Get value of default status and set to firebase
 	// var pStatus = document.getElementByName('aboutUser').value;
@@ -159,6 +179,14 @@ function SignIn(){
 
 }
 
+function showUserProfile(){
+	$('#codecatalyst').hide();
+	$('#welcome').show(3000);
+	$('#welcomeNote').hide();
+	$('#stats').show(2500);
+	$('#two').show(2500);
+
+}
 //Edit the status
 
 function updateStatus(){
@@ -167,8 +195,9 @@ function updateStatus(){
 	document.getElementsByName("about")[0].placeholder = status;
 
 	//Update Status to Firebase
-	firebase_reference.child("Rahul").set({
-		Status : status
+	firebase.database().ref('Users/' + user.uid).set({
+
+		Status: status
 	});
 	// $('#editStatus').modal('hide');
 	console.log(status);
