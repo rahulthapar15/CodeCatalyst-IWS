@@ -139,16 +139,6 @@ $(document).ready(function () {
 var provider = new firebase.auth.GoogleAuthProvider();
 var user;
 
-
-// Creating FIREBASE Reference
-var firebase_reference = firebase.database().ref();
-
-
-
-//Create a Child with the name of the person Signed In as-
-// Rahul will be replaced by Google Sign In return username
-
-
 //Sign In Using Firebase
 function SignIn(){
 	console.log("Sign in clicked");
@@ -182,7 +172,7 @@ function SignIn(){
 	// var pStatus = document.getElementByName('aboutUser').value;
 	// console.log(pStatus);
 
-}
+};
 
 function showUserProfile(){
 	$('#codecatalyst').hide();
