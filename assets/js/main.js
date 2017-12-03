@@ -148,7 +148,6 @@ var firebase_reference = firebase.database().ref();
 //Create a Child with the name of the person Signed In as-
 // Rahul will be replaced by Google Sign In return username
 
-var refer_user = firebase.database().child("Rahul");
 
 //Sign In Using Firebase
 function SignIn(){
