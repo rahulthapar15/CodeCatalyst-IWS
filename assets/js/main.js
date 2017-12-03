@@ -193,6 +193,11 @@ function updateStatus(){
 	console.log(status);
 }
 
+//UPLOAD IMAGE to FIREBASE
+function uploadImage(){
+	console.log("Image Uploaded");
+}
+
 
 //SIGNOUT FUNCTION
 function signOut() {
