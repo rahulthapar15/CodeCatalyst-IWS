@@ -130,6 +130,11 @@
 
 // --------------------------------------------------
 
+$(document).ready(function () {
+	$('#logout').hide();
+});
+
+
 //FIREBASE AUTHENTICATION
 var provider = new firebase.auth.GoogleAuthProvider();
 var user;
@@ -137,10 +142,6 @@ var user;
 
 // Creating FIREBASE Reference
 var firebase_reference = firebase.database().ref();
-firebase.database().ref('Users/' + user.uid).set({
-
-	Status : 'Default Status'
-});
 
 
 
@@ -173,6 +174,11 @@ function SignIn(){
 	});
 
 
+	firebase.database().ref('Users/' + user.uid).set({
+
+		Status: 'Default Status'
+	});
+
 	// //Get value of default status and set to firebase
 	// var pStatus = document.getElementByName('aboutUser').value;
 	// console.log(pStatus);
@@ -186,7 +192,7 @@ function showUserProfile(){
 	$('#welcomeNote').hide();
 	$('#stats').show(2500);
 	$('#two').show(2500);
-
+	$('#logout').show(2500);
 }
 //Edit the status
 
