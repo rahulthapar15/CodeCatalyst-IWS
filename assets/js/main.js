@@ -171,6 +171,7 @@ function showUserProfile(){
 	$('#codecatalyst').hide();
 	$('#welcome').show(3000);
 	$('#username').html("Welcome,<strong>"+user.displayName+"</strong>");
+	$('#aboutUser').show(3000);
 	$('#welcomeNote').hide();
 	$('#stats').show(2500);
 	$('#two').show(2500);
