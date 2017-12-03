@@ -161,13 +161,6 @@ function SignIn(){
 		var credential = error.credential;
 		// ...
 	});
-
-
-	firebase.database().ref('Users/' + user.uid).set({
-
-		Status: 'Default Status'
-	});
-
 	// //Get value of default status and set to firebase
 	// var pStatus = document.getElementByName('aboutUser').value;
 	// console.log(pStatus);
