@@ -170,7 +170,7 @@ function SignIn(){
 function showUserProfile(){
 	$('#codecatalyst').hide();
 	$('#welcome').show(3000);
-	$('#username').html("Welcome,<br><strong>"+user.displayName+"</strong>");
+	$('#username').html("Welcome,<strong>"+user.displayName+"</strong>");
 	$('#welcomeNote').hide();
 	$('#stats').show(2500);
 	$('#two').show(2500);
