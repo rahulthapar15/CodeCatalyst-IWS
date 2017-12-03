@@ -41,6 +41,11 @@
 	body {
 		-webkit-text-size-adjust: none;
 	}
+
+.uploader_conatiner{
+	max-height: 50%;
+	max-width: 60%;
+}
 	.uploader {
   display: block;
   clear: both;
