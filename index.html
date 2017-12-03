@@ -1,0 +1,152 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Shopper</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+</head>
+
+<body id="top">
+
+    <!-- Header -->
+     <header id="header">
+         <div id="codecatalyst" class="inner">
+            <h1>We are <strong>Code Catalyst </strong>, a team of<br /> highly creative and dedicated<br /> individuals!</h1>
+        </div> 
+
+        <div id="welcome" style="display:none" class="inner">
+            <a href="#" class="image avatar"><img src="images/avatar.jpg" alt="" /></a>
+            <h1>Welcome, <strong>Rahul</strong></h1>
+            <br><br>
+            <section>
+                <form method="post" action="#">
+                    <div class="row uniform 50%">
+                            <div class="11u 12u$(xsmall)">
+                                <textarea readonly name="about" id="aboutUser" placeholder="Your Status comes here" style="background:transparent;" rows="2"></textarea>
+                            </div>
+                            <div class="1u$ 12u$(xsmall)">
+                                <a  data-toggle="modal" data-target="#editStatus" class="icon fa fa-pencil-square-o"></a>
+                            </div>
+                    </div>
+                </form>
+            </section>
+
+                <footer id="footer">
+                    <div class="inner">
+                        <ul class="icons">
+                            <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+                            <li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
+                            <li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
+                            <li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+                        </ul>
+                    </div>
+                </footer>
+
+        </div>
+    </header> 
+
+    <!-- Main -->
+    <div id="main">
+
+        <!-- One -->
+        <section id="one">
+            <section id="welcomeNote">
+            <header class="major">
+                <h2>Ipsum lorem dolor aliquam ante commodo<br /> magna sed accumsan arcu neque.</h2>
+            </header>
+            <p>Accumsan orci faucibus id eu lorem semper. Eu ac iaculis ac nunc nisi lorem vulputate lorem neque cubilia ac
+                in adipiscing in curae lobortis tortor primis integer massa adipiscing id nisi accumsan pellentesque commodo
+                blandit enim arcu non at amet id arcu magna. Accumsan orci faucibus id eu lorem semper nunc nisi lorem vulputate
+                lorem neque cubilia.</p>
+            <ul class="actions">
+                <li id="signin" onclick="SignIn()" class="button special icon fa fa-google">Sign In</li>
+            </ul>
+            </section>
+        <section style="display:none" id="stats">
+                <ul class="actions">
+                    <li><a href="#" class="button big  icon fa fa-camera">78</a></li>
+                    <li><a href="#" class="button big  icon fa fa-heart">1.5m</a></li>
+                    <li><a href="#" class="button big  icon fa fa-usd">85k</a></li>
+                </ul>
+            </section>
+        </section>
+
+
+
+        <!-- TWO -->
+        <section style="display:none" id="two">
+            <ul class="actions">
+                <li><h2>Recent Uploads</h2></li>
+                <li><a href="#" class="button special icon fa fa-plus">Add New</a></li>
+            </ul>
+            <div class="row">
+                <article class="6u 12u$(xsmall) work-item">
+                    <a href="images/fulls/01.jpg" class="image fit thumb"><img src="images/thumbs/01.jpg" alt="" /></a>
+                </article>
+                <article class="6u$ 12u$(xsmall) work-item">
+                    <a href="images/fulls/02.jpg" class="image fit thumb"><img src="images/thumbs/02.jpg" alt="" /></a>
+                </article>
+                <article class="6u 12u$(xsmall) work-item">
+                    <a href="images/fulls/03.jpg" class="image fit thumb"><img src="images/thumbs/03.jpg" alt="" /></a>
+                </article>
+                <article class="6u$ 12u$(xsmall) work-item">
+                    <a href="images/fulls/04.jpg" class="image fit thumb"><img src="images/thumbs/04.jpg" alt="" /></a>
+                </article>
+            </div>
+        </section>
+
+
+        <!-- MODALS -->
+        <!-- Modal :  ASK QUESTION-->
+        <div id="editStatus" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="mainDiv" align="right">
+                    <h2 align="left">Your Status ..</h2>
+                    <textarea id="status" placeholder="Your Status.."></textarea>
+
+                    <button  onclick="updateStatus()"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+                </div>
+
+            </div>
+        </div>
+
+<script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyBa3ksvJWUGH1UqkcQykf4MubseR158ldw",
+        authDomain: "iws-codecatalyst.firebaseapp.com",
+        databaseURL: "https://iws-codecatalyst.firebaseio.com",
+        projectId: "iws-codecatalyst",
+        storageBucket: "iws-codecatalyst.appspot.com",
+        messagingSenderId: "776251673443"
+    };
+    firebase.initializeApp(config);
+
+</script>
+
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.poptrox.min.js"></script>
+    <script src="assets/js/skel.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
