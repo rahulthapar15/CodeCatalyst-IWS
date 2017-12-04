@@ -199,7 +199,7 @@ function showUserProfile(){
 	$(".upload-group").show();
 	$('#welcomeNote').hide();
 	$('#stats').show(2500);
-	$('#two').show(2500);
+	$('#photos_section').show(2500);
 	$('#two').html(" <ul class='actions'> \
 	<li> <a data-toggle='modal' data-target='#uploadImage' class='button special icon fa fa-plus'>Add New</a></li > \
 	</ul>");
