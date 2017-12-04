@@ -269,8 +269,10 @@ function queryDatabase(token) {
 		var PostObject = snapshot.val();
 		var keys = Object.keys(PostObject);
 		var currentRow;
-		for (var i = 0; i < keys.length; i++) {
-			var currentObject = PostObject[keys[i]];
+		
+			var currentObject = PostObject[keys[0]];
+			console.log(currentObject);
+			for (var i = 0; i < keys.length; i++) {
 			if (i % 3 == 0) {
 				currentRow = document.createElement("div");
 				$(currentRow).addClass("row");
