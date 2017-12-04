@@ -303,12 +303,12 @@ function queryDatabase(token) {
 // CHECK Cookie
 function checkCookie() {
 	console.log("Checking Cookie..");
-	var user = getCookie("username");
-	if (user != "") {
-		alert("Welcome again " + user);
+	var user_name = getCookie("username");
+	if (user_name != "") {
+		alert("Welcome again " + user_name);
 	} else {
-		user = user.displayName;
-			setCookie("username", user, 30);
+		user_name = user.displayName;
+			setCookie("username", user_name, 30);
 			console.log("Cookie Set");
 
 	}
