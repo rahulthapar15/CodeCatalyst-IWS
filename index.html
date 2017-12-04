@@ -129,29 +129,17 @@
             <div class="modal-dialog">
             <div class="uploader_conatiner">
                 <!-- Modal content-->
-                <h2>Upload Your Photo</h2>
+                <div class="mainDiv" align="right">
+                    <h2 align="left">Upload an Image</h2>
+                    
+                    <label class="upload-group">
+                        Upload Image
+                        <input type="file" class="upload-group" id="file">
+                    </label>
 
-                <!-- Upload  -->
-                <form id="file-upload-form" class="uploader">
-                    <input id="file-upload" type="file" name="fileUpload" accept="image/*" />
+                    <button id="uploadBtn" type="button" class="btn btn-primary" onclick="uploadFile()"></button>
 
-                    <label for="file-upload" id="file-drag">
-                    <img id="file-image" src="#" alt="Preview" class="hidden">
-                    <div id="start">
-                    <i class="fa fa-download" aria-hidden="true"></i>
-                    <div>Select a file or drag here</div>
-                    <div id="notimage" class="hidden">Please select an image</div>
-                    <span id="file-upload-btn" class="btn btn-primary">Select a file</span>
-                    </div>
-                    <div id="response" class="hidden">
-                    <div id="messages"></div>
-                    <!-- <progress class="progress" id="file-progress" value="0">
-                        <span>0</span>%
-                    </progress> -->
-                    <span id="submitImage" onclick="uploadImage()" class="btn btn-primary">Finish Uploading ..</span>
-                    </div>
-                </label>
-                </form>
+                </div>
             </div>
             </div>
         </div>

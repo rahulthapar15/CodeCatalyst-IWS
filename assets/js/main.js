@@ -132,6 +132,8 @@
 
 $(document).ready(function () {
 	$('#logout').hide();
+	$("#uploadBtn").hide();
+	$(".upload-group").hide();
 });
 
 
@@ -172,6 +174,7 @@ function showUserProfile(){
 	$('#welcome').show(3000);
 	$('#username').html("Welcome,<strong>"+user.displayName+"</strong>");
 	$('#aboutUser').show(3000);
+	$(".upload-group").show();
 	$('#welcomeNote').hide();
 	$('#stats').show(2500);
 	$('#two').show(2500);
@@ -194,6 +197,11 @@ function updateStatus(){
 }
 
 //UPLOAD IMAGE to FIREBASE
+
+$("#file").on("change", function(event){
+	$("#uploadBtn").show();
+});
+
 function uploadImage(){
 	console.log("Image Uploaded");
 }
