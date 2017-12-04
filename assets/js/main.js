@@ -172,8 +172,8 @@ function SignIn(){
 function showUserProfile(){
 	$('#codecatalyst').hide();
 	$('#welcome').show(3000);
-	$('#username').html("Welcome,<strong>"+user.displayName+"</strong>");
-	$('#welcome').html("<a class='image avatar'><img src="+user.photoURL+"alt='' /></a>< h1 id= 'username'</h1><br><br> \
+	// $('#username').html("Welcome,<strong>"+user.displayName+"</strong>");
+	$('#welcome').html("<a class='image avatar'><img src="+user.photoURL+"alt='' /></a>< h1 id= 'username'>"+user.displayName +"</h1><br><br> \
 			<section> \
 				<form method='post' action='#'> \
 					<div class='row uniform 50%'> \
@@ -192,8 +192,7 @@ function showUserProfile(){
 						<li><a id='logout' onclick='signOut()' class='button small  icon fa fa-camera'>Logout</a></li> \
 					</ul> \
 				</div> \
-			</footer>"); 
-	$('#aboutUser').show(3000);
+			</footer>");
 	$(".upload-group").show();
 	$('#welcomeNote').hide();
 	$('#stats').show(2500);
