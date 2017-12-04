@@ -264,6 +264,7 @@ function uploadFile(){
 
 
 	console.log("Image Uploaded");
+	window.reload();
 }
 
 function queryDatabase(token) {
@@ -292,7 +293,7 @@ function queryDatabase(token) {
 			$(col).append(image);
 			$(col).append(p);
 			$(currentRow).append(col);
-			addTags(image);
+			// addTags(image);
 			//create new row on every third entry
 			//col-lg-4
 		}
