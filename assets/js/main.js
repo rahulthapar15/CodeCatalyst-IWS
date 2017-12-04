@@ -190,9 +190,11 @@ function showUserProfile(){
 	$('#welcomeNote').hide();
 	$('#stats').show(2500);
 	$('#two').show(2500);
-	$('#row').html("<article class='6u 12u$(xsmall) work- item'> \
+	$('#two').html(" <ul class='actions'> \
+		< li > <a data-toggle='modal' data-target='#uploadImage' class='button special icon fa fa-plus'>Add New</a></li > \
+            </ul ><div class='row'><article class='6u 12u$(xsmall) work- item'> \
 		< a href= '"+user.photoURL+"' class='image fit thumb' > <img src='"+user.photoURL+"' alt='Caption of photo' /></a > \
-                </article >");
+                </article ></div>");
 	$('#logout').show(2500);
 }
 //Edit the status
