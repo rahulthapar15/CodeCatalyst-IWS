@@ -141,7 +141,7 @@ $(document).ready(function () {
 			queryDatabase(token);
 		} else {
 			// No user is signed in.
-			window.location = "index.html";
+			// window.location = "index.html";
 		}
 	});
 });
