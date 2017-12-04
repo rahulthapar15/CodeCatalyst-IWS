@@ -173,7 +173,26 @@ function showUserProfile(){
 	$('#codecatalyst').hide();
 	$('#welcome').show(3000);
 	$('#username').html("Welcome,<strong>"+user.displayName+"</strong>");
-	$('#welcome').html("<a class='image avatar'><img src="+user.photoURL+ " alt='' /></a>");
+	$('#welcome').html("<a class='image avatar'><img src="+user.photoURL+"alt='' /></a>< h1 id= 'username'</h1><br><br> \
+			<section> \
+				<form method='post' action='#'> \
+					<div class='row uniform 50%'> \
+						<div class='11u 12u$(xsmall)'> \
+							<textarea readonly name='about' id='aboutUser' placeholder='Your Status comes here' style='background:transparent;' rows='2'></textarea> \
+						</div> \
+						<div class='1u$ 12u$(xsmall)'> \
+							<a data-toggle='modal' data-target='#editStatus' class='icon fa fa-pencil-square-o'></a> \
+						</div> \
+					</div> \
+				</form> \
+			</section> \
+			<footer id='footer'> \
+				<div class='inner'> \
+					<ul class='icons'> \
+						<li><a id='logout' onclick='signOut()' class='button small  icon fa fa-camera'>Logout</a></li> \
+					</ul> \
+				</div> \
+			</footer>"); 
 	$('#aboutUser').show(3000);
 	$(".upload-group").show();
 	$('#welcomeNote').hide();
