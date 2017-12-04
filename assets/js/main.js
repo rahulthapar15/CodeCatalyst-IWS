@@ -265,7 +265,7 @@ function uploadFile(){
 }
 
 function queryDatabase(token) {
-	firebase.database().ref('/Posts/'+ token).once('value').then(function (snapshot) {
+	firebase.database().ref('/Posts/').once('value').then(function (snapshot) {
 		var PostObject = snapshot.val();
 		console.log(PostObject);
 		var keys = Object.keys(PostObject);
