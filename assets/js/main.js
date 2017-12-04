@@ -134,16 +134,7 @@ $(document).ready(function () {
 	$('#logout').hide();
 	$("#uploadBtn").hide();
 	$(".upload-group").hide();
-	firebase.auth().onAuthStateChanged(function (user) {
-		if (user) {
-			// User is signed in.
-			var token = firebase.auth().currentUser.uid;
-			queryDatabase(token);
-		} else {
-			// No user is signed in.
-			// window.location = "index.html";
-		}
-	});
+
 });
 
 
@@ -204,6 +195,16 @@ function showUserProfile(){
 	<li> <a data-toggle='modal' data-target='#uploadImage' class='button special icon fa fa-plus'>Add New</a></li > \
 	</ul>");
 	$('#logout').show(2500);
+	firebase.auth().onAuthStateChanged(function (user) {
+		if (user) {
+			// User is signed in.
+			var token = firebase.auth().currentUser.uid;
+			queryDatabase(token);
+		} else {
+			// No user is signed in.
+			// window.location = "index.html";
+		}
+	});
 }
 //Edit the status
 
