@@ -193,7 +193,7 @@ function showUserProfile(){
 	$('#two').html(" <ul class='actions'> \
 	<li> <a data-toggle='modal' data-target='#uploadImage' class='button special icon fa fa-plus'>Add New</a></li > \
 	</ul> \
-	<div class='row'><article class='6u 12u$(xsmall) work- item'> \
+	<div class='row'><article class='6u 12u$(xsmall) work-item'> \
 	<a href="+user.photoURL+"class='image fit thumb'><img src="+user.photoURL+" alt='Caption of photo'/></a> \
 	</article ></div>");
 	$('#logout').show(2500);
