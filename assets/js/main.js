@@ -273,7 +273,7 @@ function queryDatabase(token) {
 		console.log("Keys : "+ keys);
 		for (var i = 0; i < keys.length; i++) {
 			var currentObject = PostObject[keys[i]];
-			consol.log(currentObject);
+			console.log(currentObject);
 			if (i % 3 == 0) {
 				currentRow = document.createElement("div");
 				$(currentRow).addClass("row");
