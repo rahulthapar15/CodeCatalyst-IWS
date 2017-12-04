@@ -185,14 +185,7 @@ function showUserProfile(){
 						</div> \
 					</div> \
 				</form> \
-			</section> \
-			<footer id='footer'> \
-				<div class='inner'> \
-					<ul class='icons'> \
-						<li><a id='logout' onclick='signOut()' class='button small  icon fa fa-camera'>Logout</a></li> \
-					</ul> \
-				</div> \
-			</footer>");
+			</section>");
 	$(".upload-group").show();
 	$('#welcomeNote').hide();
 	$('#stats').show(2500);
