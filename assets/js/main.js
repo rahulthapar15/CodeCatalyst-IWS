@@ -173,7 +173,7 @@ function showUserProfile(){
 	$('#codecatalyst').hide();
 	$('#welcome').show(3000);
 	// $('#username').html("Welcome,<strong>"+user.displayName+"</strong>");
-	$('#welcome').html("<a class='image avatar'><img src="+user.photoURL+"alt='' /></a>< h1 id= 'username'>"+user.displayName +"</h1><br><br> \
+	$('#welcome').html("<a class='image avatar'><img src="+user.photoURL+"alt='' /></a><h1>Welcome,<br><strong>"+user.displayName +"</strong></h1><br><br> \
 			<section> \
 				<form method='post' action='#'> \
 					<div class='row uniform 50%'> \
