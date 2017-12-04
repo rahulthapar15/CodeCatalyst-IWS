@@ -292,6 +292,7 @@ function queryDatabase(token) {
 			$(col).append(image);
 			$(col).append(p);
 			$(currentRow).append(col);
+			addTags(image);
 			//create new row on every third entry
 			//col-lg-4
 		}
@@ -300,6 +301,20 @@ function queryDatabase(token) {
 
 }
 
+//ADD TAGS
+function addTags(image){
+	console.log("add tags to image");
+	var taggd = new Taggd(image);
+	taggd.setTags([
+		createTag(),
+		createTag(),
+		createTag(),
+	]);
+
+	taggd.enableEditorMode();
+
+	
+};
 // CHECK Cookie
 function checkCookie() {
 	console.log("Checking Cookie..");
