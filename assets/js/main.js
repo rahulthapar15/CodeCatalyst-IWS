@@ -267,6 +267,7 @@ function uploadFile(){
 function queryDatabase(token) {
 	firebase.database().ref('/Posts/'+ token).once('value').then(function (snapshot) {
 		var PostObject = snapshot.val();
+		console.log(PostObject);
 		var keys = Object.keys(PostObject);
 		var currentRow;
 		console.log("Keys : "+ keys);
