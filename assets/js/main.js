@@ -200,6 +200,7 @@ function showUserProfile(){
 			// User is signed in.
 			var token = firebase.auth().currentUser.uid;
 			queryDatabase(token);
+			console.log("Checking Cookie");
 			checkCookie();
 		} else {
 			// No user is signed in.
@@ -301,12 +302,15 @@ function queryDatabase(token) {
 
 // CHECK Cookie
 function checkCookie() {
+	console.log("Checking Cookie..");
 	var user = getCookie("username");
 	if (user != "") {
 		alert("Welcome again " + user);
 	} else {
 		user = user.displayName;
 			setCookie("username", user, 30);
+			console.log("Cookie Set");
+
 	}
 }
 
