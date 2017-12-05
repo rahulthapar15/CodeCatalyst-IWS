@@ -283,7 +283,7 @@ function uploadFile(){
 
 function queryDatabase(token) {
 
-	var post_ref = firebase.database.ref('Posts');
+	var post_ref = firebase.database().ref('Posts');
 	post_ref.orderByChild(user.uid).on("child_added", function (snapshot) {
 		console.log(snapshot.val().caption);
 	});
