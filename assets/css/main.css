@@ -59,7 +59,8 @@ label.upload-group{
 
 } */
 .contentImage {
-	width: 100%;
+	width: 60%;
+	height:40%;
 }
 .contentCaption {
 	width: 100%;
