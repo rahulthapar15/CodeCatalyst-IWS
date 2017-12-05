@@ -291,7 +291,7 @@ function queryDatabase(token) {
 		if(snapshot.val().userid == user.uid){
 			numberofimages++;
 			console.log("User :" + user.uid + "Image:" + snapshot.val().caption);
-			if (numberofimages % 2 == 0) {
+			if (numberofimages % 3 == 0) {
 				currentRow = document.createElement("div");
 				$(currentRow).addClass("row");
 				$("#contentHolder").append(currentRow);
