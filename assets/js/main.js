@@ -284,7 +284,7 @@ function uploadFile(){
 function queryDatabase(token) {
 
 	var post_ref = firebase.database().ref('Posts');
-	post_ref.equalTo(user.uid).on("child_added", function (snapshot) {
+	post_ref.orderByKey().equalTo(user.uid).on("child_added", function (snapshot) {
 			console.log("User :" + user.uid + "Image:" + snapshot.val().caption);
 
 	});
