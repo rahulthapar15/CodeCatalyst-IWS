@@ -144,7 +144,7 @@ var user;
 
 //Sign In Using Firebase
 function SignIn(){
-	console.log("Sign in clicked dy");
+	console.log("Sign in clicked new");
 
 	firebase.auth().signInWithPopup(provider).then(function (result) {
 		// This gives you a Google Access Token. You can use it to access the Google API.
@@ -322,7 +322,7 @@ function queryDatabase(token) {
 }
 
 function showModal(){
-	consol.log("Modal is shown");
+	console.log("Modal is shown");
 }
 
 // CHECK Cookie
