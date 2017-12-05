@@ -144,7 +144,7 @@ var user;
 
 //Sign In Using Firebase
 function SignIn(){
-	console.log("Sign in clicked new");
+	console.log("Sign in clicked dy");
 
 	firebase.auth().signInWithPopup(provider).then(function (result) {
 		// This gives you a Google Access Token. You can use it to access the Google API.
@@ -311,16 +311,18 @@ function queryDatabase(token) {
 			$(col).append(image);
 
 			// $(col).append(p);
-			$(col).append(btn);
+			$(col).append("<a id='btn_"+user.uid+"' onclick='showModal()' class='button small'>View</a><br>");
 			// $(btn).id("id_"+);
-			$(col).append(br);
+			// $(col).append(br);
 			$(currentRow).append(col);
 			numberofimages++;
 		}	
 	});
-	$(btn).click(console.log("VIew clicked"));
 
+}
 
+function showModal(){
+	consol.log("Modal is shown");
 }
 
 // CHECK Cookie
