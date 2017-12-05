@@ -144,7 +144,7 @@ var user;
 
 //Sign In Using Firebase
 function SignIn(){
-	console.log("Sign in clicked 2");
+	console.log("Sign in clicked 1");
 
 	firebase.auth().signInWithPopup(provider).then(function (result) {
 		// This gives you a Google Access Token. You can use it to access the Google API.
@@ -288,12 +288,8 @@ function queryDatabase(token) {
 
 	var post_ref = firebase.database().ref('Posts');
 	post_ref.orderByKey().on("child_added", function (snapshot) {
-		numberofimages++;
-	});
-
-
-	post_ref.orderByKey().on("child_added", function (snapshot) {
 		if(snapshot.val().userid == user.uid){
+			
 			console.log("User :" + user.uid + "Image:" + snapshot.val().caption);
 			if (numberofimages % 3 == 0) {
 				currentRow = document.createElement("div");
@@ -311,7 +307,7 @@ function queryDatabase(token) {
 			$(col).append(image);
 			$(col).append(p);
 			$(currentRow).append(col);
-			
+			numberofimages++;
 		}	
 	});
 
