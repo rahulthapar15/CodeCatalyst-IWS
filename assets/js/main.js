@@ -153,6 +153,7 @@ function SignIn(){
 		user = result.user;
 		showUserProfile();
 		console.log(user.displayName);
+		console.log(token);
 		// ...
 	}).catch(function (error) {
 		// Handle Errors here.
