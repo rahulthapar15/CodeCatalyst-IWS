@@ -153,7 +153,7 @@ function SignIn(){
 		user = result.user;
 		showUserProfile();
 		console.log(user.displayName);
-		console.log("User :"+ user);
+		console.log("User :"+ user.uid);
 		// ...
 	}).catch(function (error) {
 		// Handle Errors here.
@@ -269,7 +269,7 @@ function uploadFile(){
 }
 
 function queryDatabase(token) {
-	firebase.database().ref('/Posts/').once('value').then(function (snapshot) {
+	firebase.database().ref('/Posts/' + user.uid).once('value').then(function (snapshot) {
 		var PostObject = snapshot.val();
 		console.log(PostObject);
 		var keys = Object.keys(PostObject);
