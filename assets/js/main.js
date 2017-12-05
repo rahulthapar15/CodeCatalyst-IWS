@@ -251,21 +251,34 @@ function uploadFile(){
 	}, function () {
 		// Handle successful uploads on complete
 		// For instance, get the download URL: https://firebasestorage.googleapis.com/...
+
+		
+		// var postKey = firebase.database().ref('Posts/').push().key;
+		// var downloadURL = uploadTask.snapshot.downloadURL;
+		// var updates = {};
+		// var postData = {
+		// 	url: downloadURL,
+		// 	caption: $("#imageCaption").val(),
+		// 	user: user.uid
+		// };
+		// updates['/Posts/' + postKey] = postData;
+		// firebase.database().ref().update(updates);
+
 		var postKey = firebase.database().ref('Posts/').push().key;
 		var downloadURL = uploadTask.snapshot.downloadURL;
 		var updates = {};
 		var postData = {
 			url: downloadURL,
 			caption: $("#imageCaption").val(),
-			user: user.uid
+			postid: postKey
 		};
-		updates['/Posts/' + postKey] = postData;
+		updates['/Posts/' + user.uid] = postData;
 		firebase.database().ref().update(updates);
 	});
 
 
 	console.log("Image Uploaded");
-	window.reload();
+	// window.reload();
 }
 
 function queryDatabase(token) {
