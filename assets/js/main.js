@@ -303,12 +303,12 @@ function queryDatabase(token) {
 			$(image).addClass("contentImage");
 			var p = document.createElement("p");
 			var btn = document.createElement("button");
-			$(btn).addClass("button special");
+			$(btn).addClass("button small");
 			$(btn).html("View");
 			$(p).html(snapshot.val().caption);
 			$(p).addClass("contentCaption");
 			$(col).append(image);
-			$(col).append(p);
+			// $(col).append(p);
 			$(col).append(btn);
 			$(currentRow).append(col);
 			numberofimages++;
