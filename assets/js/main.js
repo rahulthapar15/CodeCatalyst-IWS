@@ -284,6 +284,7 @@ function uploadFile(){
 
 function queryDatabase(token) {
 
+	var postKey = firebase.database().ref('Posts/').key;
 	var post_ref = firebase.database().ref('Posts');
 	console.log("PostKey :" + postKey);
 	post_ref.orderByKey().equalTo(postKey).on("child_added", function (snapshot) {
