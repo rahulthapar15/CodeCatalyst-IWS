@@ -282,17 +282,38 @@ function uploadFile(){
 	console.log("Image Uploaded");
 	// window.reload();
 }
-
+var numberofimages = 0;
 function queryDatabase(token) {
+	var currentRow;
 
 	var post_ref = firebase.database().ref('Posts');
 	post_ref.orderByKey().on("child_added", function (snapshot) {
 		if(snapshot.val().userid == user.uid){
+			numberofimages++;
 			console.log("User :" + user.uid + "Image:" + snapshot.val().caption);
-		}
+			if (numberofimages % 2 == 0) {
+				currentRow = document.createElement("div");
+				$(currentRow).addClass("row");
+				$("#contentHolder").append(currentRow);
+			}
+			var col = document.createElement("div");
+			$(col).addClass("col-lg-4");
+			var image = document.createElement("img");
+			image.src = snapshot.val().url;
+			$(image).addClass("contentImage");
+			var p = document.createElement("p");
+			$(p).html(snapshot.val().caption);
+			$(p).addClass("contentCaption");
+			$(col).append(image);
+			$(col).append(p);
+			$(currentRow).append(col);
 			
-
+		}	
 	});
+
+	
+
+
 	// firebase.database().ref('/Posts/' + user.uid).once('value').then(function (snapshot) {
 	// 	var PostObject = snapshot.val();
 	// 	console.log(PostObject);
