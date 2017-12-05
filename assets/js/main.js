@@ -270,7 +270,9 @@ function uploadFile(){
 		var postData = {
 			url: downloadURL,
 			caption: $("#imageCaption").val(),
-			postid: postKey
+			postid: postKey,
+			userid: user.uid
+
 		};
 		updates['/Posts/' + postKey] = postData;
 		firebase.database().ref().update(updates);
@@ -284,8 +286,11 @@ function uploadFile(){
 function queryDatabase(token) {
 
 	var post_ref = firebase.database().ref('Posts');
-	post_ref.orderByKey().equalTo(user.uid).on("child_added", function (snapshot) {
+	post_ref.orderByKey().on("child_added", function (snapshot) {
+		if(snapshot.val().userid == user.uid){
 			console.log("User :" + user.uid + "Image:" + snapshot.val().caption);
+		}
+			
 
 	});
 	// firebase.database().ref('/Posts/' + user.uid).once('value').then(function (snapshot) {
