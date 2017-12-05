@@ -302,10 +302,14 @@ function queryDatabase(token) {
 			image.src = snapshot.val().url;
 			$(image).addClass("contentImage");
 			var p = document.createElement("p");
+			var btn = document.createElement("button");
+			$(btn).addClass("button special");
+			$(btn).html("View");
 			$(p).html(snapshot.val().caption);
 			$(p).addClass("contentCaption");
 			$(col).append(image);
 			$(col).append(p);
+			$(col).append(btn);
 			$(currentRow).append(col);
 			numberofimages++;
 		}	
