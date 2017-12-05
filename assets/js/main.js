@@ -144,7 +144,7 @@ var user;
 
 //Sign In Using Firebase
 function SignIn(){
-	console.log("Sign in clicked New");
+	console.log("Sign in clicked button");
 
 	firebase.auth().signInWithPopup(provider).then(function (result) {
 		// This gives you a Google Access Token. You can use it to access the Google API.
@@ -303,19 +303,19 @@ function queryDatabase(token) {
 			$(image).addClass("contentImage");
 			// var p = document.createElement("p");
 			var br = document.createElement("br");
-			var btn = document.createElement("button");
+			var btn = document.createElement("'<button/>', { \
+				text: 'View', \
+				id: 'btn_' "+ user.uid+", \
+				click: function () { alert(id); } \
+			});");
 			$(btn).addClass("button small");
 			$(btn).html("View");
 			// $(p).html(snapshot.val().caption);
 			// $(p).addClass("contentCaption");
 			$(col).append(image);
-			$('<button/>', {
-				text: 'View', //set text 1 to 10
-				id: 'btn_' + user.uid,
-				click: function () { alert(id); }
-			});
+
 			// $(col).append(p);
-			// $(col).append(btn);
+			$(col).append(btn);
 			// $(btn).id("id_"+);
 			$(col).append(br);
 			$(currentRow).append(col);
@@ -323,54 +323,8 @@ function queryDatabase(token) {
 		}	
 	});
 
-	
-
-
-	// firebase.database().ref('/Posts/' + user.uid).once('value').then(function (snapshot) {
-	// 	var PostObject = snapshot.val();
-	// 	console.log(PostObject);
-	// 	var keys = Object.keys(PostObject);
-	// 	var currentRow;
-	// 	console.log("Keys : "+ keys);
-	// 	for (var i = 0; i < keys.length; i++) {
-	// 		var currentObject = PostObject[keys[i]];
-	// 		console.log(currentObject);
-	// 		if (i % 3 == 0) {
-	// 			currentRow = document.createElement("div");
-	// 			$(currentRow).addClass("row");
-	// 			$("#contentHolder").append(currentRow);
-	// 		}
-	// 		var col = document.createElement("div");
-	// 		$(col).addClass("col-lg-4");
-	// 		var image = document.createElement("img");
-	// 		image.src = currentObject.url;
-	// 		$(image).addClass("contentImage");
-	// 		var p = document.createElement("p");
-	// 		$(p).html(currentObject.caption);
-	// 		$(p).addClass("contentCaption");
-	// 		$(col).append(image);
-	// 		$(col).append(p);
-	// 		$(currentRow).append(col);
-
-	// 	}
-	// });
-
 }
 
-//ADD TAGS
-function addTags(image){
-	console.log("add tags to image");
-	var taggd = new Taggd(image);
-	taggd.setTags([
-		createTag(),
-		createTag(),
-		createTag(),
-	]);
-
-	taggd.enableEditorMode();
-
-	
-};
 // CHECK Cookie
 function checkCookie() {
 	console.log("Checking Cookie..");
