@@ -144,7 +144,7 @@ var user;
 
 //Sign In Using Firebase
 function SignIn(){
-	console.log("Sign in clicked button");
+	console.log("Sign in clicked new");
 
 	firebase.auth().signInWithPopup(provider).then(function (result) {
 		// This gives you a Google Access Token. You can use it to access the Google API.
@@ -306,7 +306,6 @@ function queryDatabase(token) {
 			var btn = document.createElement("button");
 			$(btn).addClass("button small");
 			$(btn).html("View");
-			$(btn).click(console.log("VIew clicked"));
 			// $(p).html(snapshot.val().caption);
 			// $(p).addClass("contentCaption");
 			$(col).append(image);
@@ -319,6 +318,8 @@ function queryDatabase(token) {
 			numberofimages++;
 		}	
 	});
+	$(btn).click(console.log("VIew clicked"));
+
 
 }
 
