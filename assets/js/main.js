@@ -303,13 +303,10 @@ function queryDatabase(token) {
 			$(image).addClass("contentImage");
 			// var p = document.createElement("p");
 			var br = document.createElement("br");
-			var btn = document.createElement("'<button/>', { \
-				text: 'View', \
-				id: 'btn_' "+ user.uid+", \
-				click: function () { alert(id); } \
-			});");
+			var btn = document.createElement("button");
 			$(btn).addClass("button small");
 			$(btn).html("View");
+			$(btn).click(console.log("VIew clicked"));
 			// $(p).html(snapshot.val().caption);
 			// $(p).addClass("contentCaption");
 			$(col).append(image);
