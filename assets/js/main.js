@@ -282,37 +282,39 @@ function uploadFile(){
 }
 
 function queryDatabase(token) {
-	firebase.database().ref('/Posts/' + user.uid).once('value').then(function (snapshot) {
-		var PostObject = snapshot.val();
-		console.log(PostObject);
-		var keys = Object.keys(PostObject);
-		var currentRow;
-		console.log("Keys : "+ keys);
-		for (var i = 0; i < keys.length; i++) {
-			var currentObject = PostObject[keys[i]];
-			console.log(currentObject);
-			if (i % 3 == 0) {
-				currentRow = document.createElement("div");
-				$(currentRow).addClass("row");
-				$("#contentHolder").append(currentRow);
-			}
-			var col = document.createElement("div");
-			$(col).addClass("col-lg-4");
-			var image = document.createElement("img");
-			image.src = currentObject.url;
-			$(image).addClass("contentImage");
-			var p = document.createElement("p");
-			$(p).html(currentObject.caption);
-			$(p).addClass("contentCaption");
-			$(col).append(image);
-			$(col).append(p);
-			$(currentRow).append(col);
-			// addTags(image);
-			//create new row on every third entry
-			//col-lg-4
-		}
-		// ...
+
+	var post_ref = firebase.database.ref('Posts');
+	post_ref.orderByChild(user.uid).on("child_added", function (snapshot) {
+		console.log(snapshot.val().caption);
 	});
+	// firebase.database().ref('/Posts/' + user.uid).once('value').then(function (snapshot) {
+	// 	var PostObject = snapshot.val();
+	// 	console.log(PostObject);
+	// 	var keys = Object.keys(PostObject);
+	// 	var currentRow;
+	// 	console.log("Keys : "+ keys);
+	// 	for (var i = 0; i < keys.length; i++) {
+	// 		var currentObject = PostObject[keys[i]];
+	// 		console.log(currentObject);
+	// 		if (i % 3 == 0) {
+	// 			currentRow = document.createElement("div");
+	// 			$(currentRow).addClass("row");
+	// 			$("#contentHolder").append(currentRow);
+	// 		}
+	// 		var col = document.createElement("div");
+	// 		$(col).addClass("col-lg-4");
+	// 		var image = document.createElement("img");
+	// 		image.src = currentObject.url;
+	// 		$(image).addClass("contentImage");
+	// 		var p = document.createElement("p");
+	// 		$(p).html(currentObject.caption);
+	// 		$(p).addClass("contentCaption");
+	// 		$(col).append(image);
+	// 		$(col).append(p);
+	// 		$(currentRow).append(col);
+
+	// 	}
+	// });
 
 }
 
