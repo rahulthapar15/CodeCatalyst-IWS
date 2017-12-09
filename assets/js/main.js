@@ -229,10 +229,10 @@ function updateStatus(){
 //UPLOAD IMAGE to FIREBASE
 var selectedFile;
 
-$("#file").on("change", function (event) {
-	selectedFile = event.target.files[0];
-	$("#uploadButton").show();
-});
+// $("#file").on("change", function (event) {
+// 	selectedFile = event.target.files[0];
+// 	$("#uploadButton").show();
+// });
 
 function uploadFile(){
 	// Create a root reference
@@ -253,17 +253,6 @@ function uploadFile(){
 		// Handle successful uploads on complete
 		// For instance, get the download URL: https://firebasestorage.googleapis.com/...
 
-		
-		// var postKey = firebase.database().ref('Posts/').push().key;
-		// var downloadURL = uploadTask.snapshot.downloadURL;
-		// var updates = {};
-		// var postData = {
-		// 	url: downloadURL,
-		// 	caption: $("#imageCaption").val(),
-		// 	user: user.uid
-		// };
-		// updates['/Posts/' + postKey] = postData;
-		// firebase.database().ref().update(updates);
 
 		var postKey = firebase.database().ref('Posts/').push().key;
 		var downloadURL = uploadTask.snapshot.downloadURL;
