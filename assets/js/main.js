@@ -270,6 +270,9 @@ function uploadFile(){
 		var postData = {
 			url: downloadURL,
 			caption: $("#imageCaption").val(),
+			tag1 : $("#tag1").val(),
+			tag2: $("#tag2").val(),
+			tag3: $("#tag3").val(),
 			postid: postKey,
 			userid: user.uid
 
