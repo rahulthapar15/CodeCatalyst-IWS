@@ -2734,6 +2734,77 @@ label.upload-group{
 			transform: rotate(360deg);
 		}
 	}
+	.container {
+    background-size: cover;
+    height: 100%;
+    &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: fade(black, 80%);
+    }
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    width: 80%;
+    height: 80%;
+    max-width: 1120px;
+    max-height: 650px;
+    min-height: 500px;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    border-radius: 2px;
+    box-shadow: 0 0 50px 0 rgba(0,0,0,0.2);
+    background-color: white;
+    overflow: hidden;
+}
+
+.image-wrapper {
+    width: 65%;
+    height: 100%;
+    background-size: cover;
+}
+
+.content-wrapper {
+    width: 35%;
+    padding: 100px 75px;
+    background-color: white;
+    font-family: 'Signika Negative', sans-serif;
+}
+
+.pre-title {
+    margin-bottom: 15px;
+    color: #d6d6d6;
+    text-transform: uppercase;
+}
+
+.modal-title {
+    font-size: 24px;
+    color: #333333;
+    font-weight: 700;
+	text-transform: uppercase;
+	content: "";
+       display: block;
+        height: 1px;
+        width: 100px;
+        margin: 30px 0;
+        background-color: #333333;
+
+}
+
+
+.description {
+    font-weight: 300;
+    line-height: 2;
+}
 
 	.poptrox-popup {
 		-moz-box-sizing: content-box;
