@@ -315,7 +315,7 @@ function queryDatabase(token) {
 			$(col).append(image);
 
 			// $(col).append(p);
-			$(col).append("<a id='btn_" + user.uid + "' onclick='showTags()' data-toggle='modal' data-target='#showModal' class='button small'>View</a><br>");
+			$(col).append("<a id='btn_" + user.uid + "' onclick='showTags()' class='button small'>View</a><br>");
 			// $(btn).id("id_"+);
 			// $(col).append(br);
 			$(currentRow).append(col);
