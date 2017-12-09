@@ -323,7 +323,9 @@ function queryDatabase(token) {
 	});
 
 }
-
+// ction showModal(){
+// 	console.log("Modal is shown");
+// }
 // function showModal(){
 // 	console.log("Modal is shown");
 // }
