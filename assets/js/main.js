@@ -170,15 +170,7 @@ function SignIn(){
 	// console.log(pStatus);
 
 };
-var data_ref = firebase.database().ref().child("Users/");
-data_ref.on("child_added", snap => {
 
-	// Iterate over all records in DB and take the snapshot
-	var mStore = snap.val();
-
-	// $('#aboutUser').html( mStore);
-});
-console.log(mStore);
 function showUserProfile(){
 	$('#codecatalyst').hide();
 	$('#welcome').show(3000);
@@ -189,7 +181,7 @@ function showUserProfile(){
 				<form method='post' action='#'> \
 					<div class='row uniform 50%'> \
 						<div class='11u 12u$(xsmall)'> \
-							<textarea readonly name='about' id='aboutUser' placeholder="+mStore+" style='background:transparent;' rows='2'></textarea> \
+							<textarea readonly name='about' id='aboutUser' placeholder='Edit your status' style='background:transparent;' rows='2'></textarea> \
 						</div> \
 						<div class='1u$ 12u$(xsmall)'> \
 							<a data-toggle='modal' data-target='#editStatus' class='icon fa fa-pencil-square-o'></a> \
