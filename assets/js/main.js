@@ -174,6 +174,14 @@ function SignIn(){
 function showUserProfile(){
 	$('#codecatalyst').hide();
 	$('#welcome').show(3000);
+	$(".upload-group").show();
+	$('#welcomeNote').hide();
+	$('#stats').show(2500);
+	$('#photos_section').show(2500);
+	$('#two').html(" <ul class='actions'> \
+	<li> <a data-toggle='modal' data-target='#uploadImage' class='button special icon fa fa-plus'>Add New</a></li > \
+	</ul>");
+	$('#logout').show(2500);
 	// $('#username').html("Welcome,<strong>"+user.displayName+"</strong>");
 	var data_ref = firebase.database().ref().child("Users/");
 	data_ref.on("child_added", snap => {
@@ -196,14 +204,7 @@ function showUserProfile(){
 					</div> \
 				</form> \
 			</section>");
-	$(".upload-group").show();
-	$('#welcomeNote').hide();
-	$('#stats').show(2500);
-	$('#photos_section').show(2500);
-	$('#two').html(" <ul class='actions'> \
-	<li> <a data-toggle='modal' data-target='#uploadImage' class='button special icon fa fa-plus'>Add New</a></li > \
-	</ul>");
-	$('#logout').show(2500);
+
 	firebase.auth().onAuthStateChanged(function (user) {
 		if (user) {
 			// User is signed in.
