@@ -175,6 +175,14 @@ function showUserProfile(){
 	$('#codecatalyst').hide();
 	$('#welcome').show(3000);
 	// $('#username').html("Welcome,<strong>"+user.displayName+"</strong>");
+	var data_ref = firebase.database().ref().child("Users/");
+	data_ref.on("child_added", snap => {
+
+		// Iterate over all records in DB and take the snapshot
+		var mStore = snap.val();
+		
+		$('#aboutUser').html( mStore);
+	});
 	$('#welcome').html("<a class='image avatar'><img src="+user.photoURL+"alt='' /></a><h1>Welcome,<br><strong>"+user.displayName +"</strong></h1><br><br> \
 			<section> \
 				<form method='post' action='#'> \
@@ -314,7 +322,7 @@ function queryDatabase(token) {
 			$(col).append(image);
 
 			// $(col).append(p);
-			// $(col).append("<a id='btn_" + user.uid + "' data-toggle='modal' data-target='#showModal' class='button small'>View</a><br>");
+			$(col).append("<a id='btn_" + user.uid + "' onclick='showTags()' data-toggle='modal' data-target='#showModal' class='button small'>View</a><br>");
 			// $(btn).id("id_"+);
 			// $(col).append(br);
 			$(currentRow).append(col);
@@ -323,12 +331,21 @@ function queryDatabase(token) {
 	});
 
 }
-// ction showModal(){
-// 	console.log("Modal is shown");
-// }
-// function showModal(){
-// 	console.log("Modal is shown");
-// }
+
+function showTags(){
+	var post_ref = firebase.database().ref('Posts');
+	post_ref.orderByKey().on("child_added", function (snapshot) {
+		if (snapshot.val().userid == user.uid) {
+
+			console.log("---------------------------------");
+			console.log("Tag 1 :" + snapshot.val().tag1);
+			console.log("Tag 2 :" + snapshot.val().tag2);
+			console.log("Tag 3 :" + snapshot.val().tag3);
+			console.log("---------------------------------");
+
+		}
+	});
+}
 
 // CHECK Cookie
 function checkCookie() {
