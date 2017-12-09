@@ -170,27 +170,20 @@ function SignIn(){
 	// console.log(pStatus);
 
 };
+var data_ref = firebase.database().ref().child("Users/");
+data_ref.on("child_added", snap => {
 
+	// Iterate over all records in DB and take the snapshot
+	var mStore = snap.val();
+
+	// $('#aboutUser').html( mStore);
+});
+console.log(mStore);
 function showUserProfile(){
 	$('#codecatalyst').hide();
 	$('#welcome').show(3000);
-	$(".upload-group").show();
-	$('#welcomeNote').hide();
-	$('#stats').show(2500);
-	$('#photos_section').show(2500);
-	$('#two').html(" <ul class='actions'> \
-	<li> <a data-toggle='modal' data-target='#uploadImage' class='button special icon fa fa-plus'>Add New</a></li > \
-	</ul>");
-	$('#logout').show(2500);
 	// $('#username').html("Welcome,<strong>"+user.displayName+"</strong>");
-	var data_ref = firebase.database().ref().child("Users/");
-	data_ref.on("child_added", snap => {
 
-		// Iterate over all records in DB and take the snapshot
-		var mStore = snap.val();
-		
-		// $('#aboutUser').html( mStore);
-	});
 	$('#welcome').html("<a class='image avatar'><img src="+user.photoURL+"alt='' /></a><h1>Welcome,<br><strong>"+user.displayName +"</strong></h1><br><br> \
 			<section> \
 				<form method='post' action='#'> \
@@ -204,7 +197,14 @@ function showUserProfile(){
 					</div> \
 				</form> \
 			</section>");
-
+	$(".upload-group").show();
+	$('#welcomeNote').hide();
+	$('#stats').show(2500);
+	$('#photos_section').show(2500);
+	$('#two').html(" <ul class='actions'> \
+	<li> <a data-toggle='modal' data-target='#uploadImage' class='button special icon fa fa-plus'>Add New</a></li > \
+	</ul>");
+	$('#logout').show(2500);
 	firebase.auth().onAuthStateChanged(function (user) {
 		if (user) {
 			// User is signed in.
