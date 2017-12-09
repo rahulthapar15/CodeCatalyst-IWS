@@ -181,14 +181,14 @@ function showUserProfile(){
 		// Iterate over all records in DB and take the snapshot
 		var mStore = snap.val();
 		
-		$('#aboutUser').html( mStore);
+		// $('#aboutUser').html( mStore);
 	});
 	$('#welcome').html("<a class='image avatar'><img src="+user.photoURL+"alt='' /></a><h1>Welcome,<br><strong>"+user.displayName +"</strong></h1><br><br> \
 			<section> \
 				<form method='post' action='#'> \
 					<div class='row uniform 50%'> \
 						<div class='11u 12u$(xsmall)'> \
-							<textarea readonly name='about' id='aboutUser' placeholder='Your Status comes here' style='background:transparent;' rows='2'></textarea> \
+							<textarea readonly name='about' id='aboutUser' placeholder="+mStore+" style='background:transparent;' rows='2'></textarea> \
 						</div> \
 						<div class='1u$ 12u$(xsmall)'> \
 							<a data-toggle='modal' data-target='#editStatus' class='icon fa fa-pencil-square-o'></a> \
