@@ -229,10 +229,10 @@ function updateStatus(){
 //UPLOAD IMAGE to FIREBASE
 var selectedFile;
 
-// $("#file").on("change", function (event) {
-// 	selectedFile = event.target.files[0];
-// 	$("#uploadButton").show();
-// });
+$("#file").on("change", function (event) {
+	selectedFile = event.target.files[0];
+	$("#uploadButton").show();
+});
 
 function uploadFile(){
 	// Create a root reference
@@ -275,6 +275,8 @@ function uploadFile(){
 	console.log("Image Uploaded");
 	// window.reload();
 }
+
+
 var numberofimages = 0;
 function queryDatabase(token) {
 	var currentRow;
